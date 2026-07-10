@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Empresa Admin</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Empresa Admin</h1>
+    <p class="subtitle">Administrador economico basico</p>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn is-active" data-tab="economia">Economia</button>
+    <button class="tab-btn" data-tab="empleados">Empleados</button>
+    <button class="tab-btn" data-tab="departamentos">Departamentos</button>
+    <button class="tab-btn" data-tab="pagos">Pagos</button>
+  </nav>
+
+  <main>
+    <!-- ===================== ECONOMIA ===================== -->
+    <section class="tab-panel is-active" data-tab="economia">
+      <div class="stat-row" id="stat-row"></div>
+
+      <div class="card">
+        <h2>Salarios vs. presupuesto por departamento</h2>
+        <div id="meters"></div>
+      </div>
+
+      <div class="card">
+        <h2>Total pagado por mes</h2>
+        <table class="data-table" id="tabla-pagos-mes">
+          <thead>
+            <tr><th>Anio</th><th>Mes</th><th>Cantidad de pagos</th><th>Total pagado</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== EMPLEADOS ===================== -->
+    <section class="tab-panel" data-tab="empleados">
+      <div class="card">
+        <h2>Nuevo empleado</h2>
+        <form id="form-empleado" class="form-grid">
+          <label>Nombre <input type="text" name="nombre" required /></label>
+          <label>Apellido <input type="text" name="apellido" required /></label>
+          <label>Email <input type="email" name="email" required /></label>
+          <label>Puesto <input type="text" name="puesto" /></label>
+          <label>Salario <input type="number" name="salario" min="0" step="0.01" required /></label>
+          <label>Fecha de ingreso <input type="date" name="fecha_ingreso" /></label>
+          <label>Departamento
+            <select name="departamento_id" id="select-departamento-empleado">
+              <option value="">Sin asignar</option>
+            </select>
+          </label>
+          <button type="submit">Crear empleado</button>
+        </form>
+        <p class="form-message" id="msg-empleado"></p>
+      </div>
+
+      <div class="card">
+        <h2>Empleados</h2>
+        <table class="data-table" id="tabla-empleados">
+          <thead>
+            <tr>
+              <th>Nombre</th><th>Email</th><th>Puesto</th><th>Departamento</th>
+              <th>Salario</th><th>Ingreso</th><th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== DEPARTAMENTOS ===================== -->
+    <section class="tab-panel" data-tab="departamentos">
+      <div class="card">
+        <h2>Departamentos</h2>
+        <table class="data-table" id="tabla-departamentos">
+          <thead>
+            <tr><th>Nombre</th><th>Presupuesto mensual</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===================== PAGOS ===================== -->
+    <section class="tab-panel" data-tab="pagos">
+      <div class="card">
+        <h2>Registrar pago de salario</h2>
+        <form id="form-pago" class="form-grid">
+          <label>Empleado
+            <select name="empleado_id" id="select-empleado-pago" required></select>
+          </label>
+          <label>Mes <input type="number" name="mes" min="1" max="12" required /></label>
+          <label>Anio <input type="number" name="anio" min="2000" required /></label>
+          <label>Monto pagado <input type="number" name="monto_pagado" min="0" step="0.01" required /></label>
+          <label>Fecha de pago <input type="date" name="fecha_pago" /></label>
+          <button type="submit">Registrar pago</button>
+        </form>
+        <p class="form-message" id="msg-pago"></p>
+      </div>
+
+      <div class="card">
+        <h2>Historial de pagos</h2>
+        <table class="data-table" id="tabla-pagos">
+          <thead>
+            <tr><th>Empleado</th><th>Mes</th><th>Anio</th><th>Monto pagado</th><th>Fecha de pago</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

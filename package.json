@@ -1,0 +1,20 @@
+{
+  "name": "empresa-admin",
+  "version": "1.0.0",
+  "description": "Administrador economico basico de empresa - proyecto educativo con Node.js, Express y PostgreSQL",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:create": "node src/db/create-tables.js",
+    "db:seed": "node src/db/seed.js"
+  },
+  "keywords": ["educativo", "express", "postgresql"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,16 +1,7 @@
 # Empresa Admin — Proyecto educativo (Node.js + Express + PostgreSQL)
 
-Proyecto de ejemplo, pensado para clase, que implementa un administrador
-economico basico de una empresa: carga de empleados, registro de sus
-salarios y consultas economicas simples (cuanto se paga por mes, cuanto
-gasta cada departamento, etc).
-
-## Objetivo del proyecto
-
-Mostrar, con un caso simple y realista, como se construye una API REST
-con Node.js + Express que persiste datos en PostgreSQL, separando
-responsabilidades en carpetas claras: rutas, controladores, configuracion
-de base de datos y SQL.
+Proyecto de ejemplo que implementa un administrador economico basico de una empresa: carga de empleados, registro de sus
+salarios y consultas economicas simples (cuanto se paga por mes, cuanto gasta cada departamento, etc).
 
 ## Modelo de datos
 
@@ -23,10 +14,6 @@ Tres tablas relacionadas entre si:
 ```
 departamentos (1) ───< (N) empleados (1) ───< (N) pagos_salarios
 ```
-
-Esto permite cruzar informacion: por ejemplo, saber cuanto gasta en
-salarios cada departamento, o cuanto pago la empresa en total en un mes
-determinado.
 
 ## Frontend
 
